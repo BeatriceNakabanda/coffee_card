@@ -1,34 +1,45 @@
+import 'package:coffee_card/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: const Text("My coffee app"),
-        backgroundColor: Colors.brown[700],
-        centerTitle: true,
-      ),
-      body: const Home(),
-    )
+  runApp(const MaterialApp(
+    home: Home()
+    // home: Sandbox()
   ));
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Sandbox extends StatelessWidget {
+  const Sandbox({super.key});
 
-  @override //build helps reload the app automatically without us manually doing it
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.orange,
-      padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.fromLTRB(20, 20, 0, 0),
-      child: const Text("Hello Addicts!", style: TextStyle(
-        color: Colors.white,
-        fontSize: 18,
-        letterSpacing: 4,
-        decoration: TextDecoration.underline,
-        
-      ),),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Sandbox'),
+        backgroundColor: Colors.grey,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 100,
+            color: Colors.red,
+            child: const Text('one'),
+            
+          ),
+          Container(
+            width: 200,
+            color: Colors.green,
+            child: const Text('two'),
+          ),
+          Container(
+            width: 300,
+            color: Colors.blue,
+            child: const Text('three'),
+          ),
+        ],
+      ),
     );
   }
 }
